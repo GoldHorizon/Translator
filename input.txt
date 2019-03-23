@@ -1,0 +1,21 @@
+// Completely random ideas for script. Not parsed yet, only lexed
+
+def function(x) {				// Function definition with one var as param
+	print("x = %", x)			// Pass formatted string with arguments
+}
+
+def print(str, args..) 			// Silly "param-list" idea...?
+{
+	for c in str  				// No parens needed?
+	{
+		if c == '%'				// No brackets needed?!
+			print (args.next)	// Print next argument (or just 'print (args)' to iterate?)
+		else
+			print (c)			// Is this print just a default function?
+	}
+}
+
+def list(i) {
+	for num from 1 to i			// Strange syntax?
+		print num
+}
