@@ -1,3 +1,5 @@
+#pragma once
+
 #define _identifier 1
 #define _integer 2
 #define _hex 3
