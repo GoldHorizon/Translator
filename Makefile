@@ -1,7 +1,7 @@
-CXX	     = g++
+CXX      = g++
 CXXFLAGS = -c -Wall -Wextra -Wfloat-equal -Wundef -Wcast-align -Wwrite-strings -Wlogical-op -Wmissing-declarations -Wredundant-decls -Wshadow -Woverloaded-virtual -std=c++11
 OBJS     = lex.yy.o parser.o
-OUT	     = translator
+OUT      = translator
 
 all: $(OBJS)
 	$(CXX) $(OBJS) -o $(OUT)
@@ -15,6 +15,6 @@ lex.yy.o: scanner.l
 
 parser.o: parser.cpp parser.h
 	$(CXX) $(CXXFLAGS) $<
-	
+
 clean:
 	rm -f $(OBJS) $(OUT) lex.yy.c 
