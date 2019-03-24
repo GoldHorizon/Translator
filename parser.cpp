@@ -12,25 +12,25 @@ extern int _col;
 
 int main (int argc, char** argv) {
 
-	int result;
+    int result;
 
-	result = yylex();
+    result = yylex();
 
-	while (result != 0) {
+    while (result != 0) {
 
-		lexeme* temp = new lexeme(yytext, _line, _col);
-		
-		std::cout << "Result: " 	<< std::setw(5) << std::left << result 
-				  << " - Line: " 	<< std::setw(5) << std::right << temp->line 
-				  << " : " 			<< std::setw(5) << std::left << temp->col
-				  << " - \"" 		<< temp->name << "\"\n";
+        lexeme* temp = new lexeme(yytext, _line, _col);
 
-		// Currently just storing in a lexeme to test 
-		// the structure for future lookahead lexeme(s)
-		delete temp;
+        std::cout << "Result: " 	<< std::setw(5) << std::left << result 
+            << " - Line: " 	<< std::setw(5) << std::right << temp->line 
+            << " : " 			<< std::setw(5) << std::left << temp->col
+            << " - \"" 		<< temp->name << "\"\n";
 
-		result = yylex();
-	}
+        // Currently just storing in a lexeme to test 
+        // the structure for future lookahead lexeme(s)
+        delete temp;
 
-	return 0;
+        result = yylex();
+    }
+
+    return 0;
 }
