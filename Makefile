@@ -1,16 +1,20 @@
-FLAGS 	= -std=c++11
-OBJS	= lex.yy.o parser.o
-OUTPUT	= translator.sh
+CXX	     = g++
+CXXFLAGS = -c -Wall -Wextra -Wfloat-equal -Wundef -Wcast-align -Wwrite-strings -Wlogical-op -Wmissing-declarations -Wredundant-decls -Wshadow -Woverloaded-virtual -std=c++11
+OBJS     = lex.yy.o parser.o
+OUT	     = translator
 
 all: $(OBJS)
-	g++ -o $(OUTPUT) $(OBJS)
+	$(CXX) $(OBJS) -o $(OUT)
+
+debug: CXXFLAGS += -ggdb
+debug: all
 
 lex.yy.o: scanner.l
-	flex -i scanner.l
-	g++ $(FLAGS) -c lex.yy.c
+	flex -i $<
+	$(CXX) $(CXXFLAGS) lex.yy.c
 
 parser.o: parser.cpp parser.h
-	g++ $(FLAGS) -c parser.cpp
+	$(CXX) $(CXXFLAGS) $<
 	
 clean:
-	rm -f $(OBJS) $(OUTPUT) lex.yy.c 
+	rm -f $(OBJS) $(OUT) lex.yy.c 
