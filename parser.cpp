@@ -20,10 +20,10 @@ int main (int argc, char** argv) {
 
         lexeme* temp = new lexeme(yytext, _line, _col);
 
-        std::cout << "Result: " 	<< std::setw(5) << std::left << result 
-            << " - Line: " 	<< std::setw(5) << std::right << temp->line 
-            << " : " 			<< std::setw(5) << std::left << temp->col
-            << " - \"" 		<< temp->name << "\"\n";
+        std::cout << "Result: "     << std::setw(5) << std::left << result 
+            << " - Line: "  << std::setw(5) << std::right << temp->line 
+            << " : "            << std::setw(5) << std::left << temp->col
+            << " - \""      << temp->name << "\"\n";
 
         // Currently just storing in a lexeme to test 
         // the structure for future lookahead lexeme(s)

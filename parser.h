@@ -3,7 +3,7 @@
 #include <string>
 
 struct lexeme {
-    std::string name;	
+    std::string name;   
     int line;
     int col;
 
