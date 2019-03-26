@@ -34,4 +34,5 @@
 # Project specific
 lex.yy.c
 translator
-*.swp       # vim temp files
+# vim temp files
+*.swp
